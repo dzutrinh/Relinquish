@@ -1,11 +1,11 @@
 # Build output
 build/
 
-# Icon and screenshot generators (the finished Design/AppIcon.icns, AppIcon-1024.png
+# Icon and screenshot generators (the finished design/AppIcon.icns, AppIcon-1024.png
 # and docs/screenshots/ are committed)
-Design/Icon.swift
-Design/make_icon.sh
-Design/make_screenshots.sh
+design/Icon.swift
+design/make_icon.sh
+design/make_screenshots.sh
 
 # macOS
 .DS_Store

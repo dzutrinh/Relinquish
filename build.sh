@@ -12,13 +12,13 @@ mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 
 swiftc -O -swift-version 5 -parse-as-library \
     -target "$(uname -m)-apple-macos13.0" \
-    Sources/*.swift \
+    src/*.swift \
     -o "$APP/Contents/MacOS/Relinquish"
 cp Info.plist "$APP/Contents/"
-if [ ! -f Design/AppIcon.icns ]; then
-    [ -x Design/make_icon.sh ] && Design/make_icon.sh || { echo "Design/AppIcon.icns is missing" >&2; exit 1; }
+if [ ! -f design/AppIcon.icns ]; then
+    [ -x design/make_icon.sh ] && design/make_icon.sh || { echo "design/AppIcon.icns is missing" >&2; exit 1; }
 fi
-cp Design/AppIcon.icns "$APP/Contents/Resources/"
+cp design/AppIcon.icns "$APP/Contents/Resources/"
 codesign --force --sign - "$APP"
 echo "Built $APP"
 
